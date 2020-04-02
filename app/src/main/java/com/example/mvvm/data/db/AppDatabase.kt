@@ -15,7 +15,7 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun getUserDao(): UserDao
 
     companion object {
-
+//volatile means this variable is immediately available/visible to all the threads
         @Volatile
         private var instance: AppDatabase? = null
         private val LOCK = Any()
@@ -26,8 +26,7 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        private fun buildDatabase(context: Context) =
-            Room.databaseBuilder(
+        private fun buildDatabase(context: Context) = Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
                 "MyDatabase.db"

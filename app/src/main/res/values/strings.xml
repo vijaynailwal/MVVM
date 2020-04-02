@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">MVVM</string>
     <string name="no_internet">No Internet Connection</string>
+    <string name="invalid_email_password">Invalid email or password</string>
+
+
+
 </resources>

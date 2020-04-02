@@ -1,4 +1,4 @@
-package com.example.mvvm.auth
+package com.example.mvvm.ui.auth
 
 import com.example.mvvm.data.db.entities.User
 
