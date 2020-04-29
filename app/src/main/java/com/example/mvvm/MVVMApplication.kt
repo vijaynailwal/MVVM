@@ -7,6 +7,7 @@ import com.example.mvvm.data.network.NetworkConnectionInterceptor
 import com.example.mvvm.data.preferences.PreferenceProvider
 import com.example.mvvm.data.repositories.UserRepository
 import com.example.mvvm.ui.auth.AuthViewModelFactory
+import com.example.mvvm.ui.home.profile.ProfileViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
@@ -28,8 +29,10 @@ class MVVMApplication : Application(), KodeinAware {
         bind() from provider { AuthViewModelFactory(instance()) }
 
 
-    }
+        bind() from provider { ProfileViewModelFactory(instance()) }
 
+
+    }
 
 
 }

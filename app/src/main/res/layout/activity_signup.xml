@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -10,13 +11,11 @@
 
     </data>
 
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-        android:id="@+id/root_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E2E2E2"
-        tools:context=".ui.auth.LoginActivity">
+        tools:context=".ui.auth.SignupActivity">
 
 
         <RelativeLayout
@@ -26,9 +25,39 @@
 
 
             <LinearLayout
+                android:id="@+id/linearLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="architect your app with"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="#465A61"
+                    app:fontFamily="cursive" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="MVVM"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+                    android:textColor="#969EEE"
+                    android:textStyle="bold"
+                    android:typeface="monospace"
+                    app:fontFamily="casual" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout1"
                 android:background="#ffffff"
                 android:orientation="vertical"
                 android:padding="18dp">
@@ -38,7 +67,17 @@
                     android:layout_height="match_parent"
                     android:layout_marginBottom="12dp"
                     android:drawablePadding="16dp"
-                    android:hint="probelalkhan@gmail.com"
+                    android:hint="Belal Khan"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:text="@={viewmodel.name}" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:drawablePadding="16dp"
+                    android:hint="belal@gmail.com"
                     android:inputType="textEmailAddress"
                     android:padding="12dp"
                     android:text="@={viewmodel.email}" />
@@ -53,6 +92,16 @@
                     android:padding="12dp"
                     android:text="@={viewmodel.password}" />
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="12dp"
+                    android:drawablePadding="16dp"
+                    android:hint="confirm password"
+                    android:inputType="textPassword"
+                    android:padding="12dp"
+                    android:text="@={viewmodel.passwordconfirm}" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -65,23 +114,23 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="@{viewmodel::onLoginButtonClick}"
-                    android:text="Sign In"
+                    android:onClick="@{viewmodel::onSignupButtonClick}"
+                    android:text="Sign Up"
                     android:textAllCaps="false" />
 
             </LinearLayout>
 
             <TextView
-                android:layout_marginTop="12dp"
-                android:textColor="@color/colorPrimary"
-                android:onClick="@{viewmodel::onSignup}"
-                android:layout_centerHorizontal="true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:layout_below="@id/linearLayout2"
-                android:textAlignment="center"
-                android:text="Don't have an account?\nSign Up Here"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:onClick="@{viewmodel::onLogin}"
+                android:text="Already have an account?\nSign in Here"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/colorPrimary" />
 
         </RelativeLayout>
 
@@ -94,7 +143,8 @@
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 </layout>
+
+
 
 
